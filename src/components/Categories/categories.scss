@@ -1,4 +1,4 @@
-@import "src/variables";
+@import 'src/variables';
 
 .categories {
     display: flex;
@@ -42,7 +42,7 @@
                     position: absolute;
                     background: $background-light;
                     padding: 3rem 2rem 2rem 1rem;
-                    display:flex;
+                    display: flex;
                     flex-direction: column;
                     gap: 0.7rem;
                 }

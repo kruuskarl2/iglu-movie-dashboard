@@ -1,24 +1,32 @@
-import React from 'react';
+import React from 'react'
 
-import './categories.scss';
-import data from './dummyData';
+import './categories.scss'
+import data from './dummyData'
 
 function Categories() {
-    const { genres } = data;
-    genres.splice(5);
+    const { genres } = data
+    genres.splice(5)
 
-    const dropdownCategoriesJSX = genres.map(genre => {
-        const { id, name } = genre;
+    const dropdownCategoriesJSX = genres.map((genre) => {
+        const { id, name } = genre
 
-        return (<div key={id} className={'category'}>{name}</div>)
-    });
+        return (
+            <div key={id} className={'category'}>
+                {name}
+            </div>
+        )
+    })
 
-    const categoriesJSX = genres.map(genre => {
-        const { id, name } = genre;
+    const categoriesJSX = genres.map((genre) => {
+        const { id, name } = genre
 
-        return (<div key={id} className={'category'}>{name}</div>)
-    });
-    
+        return (
+            <div key={id} className={'category'}>
+                {name}
+            </div>
+        )
+    })
+
     return (
         <div className="categories">
             <div className={'category-container'}>
@@ -30,7 +38,7 @@ function Categories() {
                 <div className={'dropdown'}>{dropdownCategoriesJSX}</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Categories;
+export default Categories

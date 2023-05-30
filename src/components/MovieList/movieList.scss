@@ -1,4 +1,4 @@
-@import "src/variables";
+@import 'src/variables';
 
 .movie-list {
     margin: 2rem;
@@ -17,11 +17,11 @@
             cursor: pointer;
             transition: transform 0.15s;
             max-width: 9.438rem;
-    
+
             &:hover {
                 transform: scale(1.03);
             }
-            
+
             .poster {
                 max-width: 9.438rem;
             }
