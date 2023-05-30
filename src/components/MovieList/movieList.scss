@@ -13,17 +13,43 @@
         margin-left: auto;
 
         .movie-card {
-            border: 1px solid rgba($foreground-light, 0.5);
             cursor: pointer;
-            transition: transform 0.15s;
             max-width: 9.438rem;
+            height: 14.156rem;
 
-            &:hover {
-                transform: scale(1.03);
+            &.selected {
+                margin-bottom: 27rem;
+
+                .poster {
+                    transform: scale(1.05);
+                }
+
+                .arrow {
+                    width: 18px;
+                    height: 18px;
+                    border-left: 1px solid rgba($foreground-light, 0.5);
+                    border-top: 1px solid rgba($foreground-light, 0.5);
+                    background: linear-gradient(
+                        135deg,
+                        $background-dark 50%,
+                        transparent 50%
+                    );
+                    transform: rotate(45deg);
+                    position: absolute;
+                    margin-left: 4.3rem;
+                    margin-top: 0.95rem;
+                    z-index: 10;
+                }
             }
 
             .poster {
                 max-width: 9.438rem;
+                transition: transform 0.15s;
+                border: 1px solid rgba($foreground-light, 0.5);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
         }
     }

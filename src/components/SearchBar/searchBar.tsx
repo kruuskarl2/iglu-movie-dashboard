@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import './searchBar.scss'
-import searchIcon from './searchIcon.svg'
+import './searchBar.scss';
+import searchIcon from './searchIcon.svg';
 
 function SearchBar() {
     return (
@@ -13,7 +13,7 @@ function SearchBar() {
             />
             <img src={searchIcon} alt={'search'} className={'search-button'} />
         </form>
-    )
+    );
 }
 
-export default SearchBar
+export default SearchBar;

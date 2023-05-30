@@ -1,0 +1,68 @@
+@import 'src/variables';
+
+.movie-description {
+    height: 25.188rem;
+    position: absolute;
+    border-top: 1px solid rgba($foreground-light, 0.5);
+    border-bottom: 1px solid rgba($foreground-light, 0.5);
+    margin-top: 1.5rem;
+    left: 0;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    width: 100%;
+
+    .container {
+        max-width: 1440px;
+        margin-right: auto;
+        margin-left: auto;
+        height: 100%;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 100%;
+
+        &::before {
+            content: ' ';
+            background: linear-gradient(90deg, black, rgba(0, 0, 0, 0));
+            top: 0;
+            left: 50%;
+            width: 30%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .text-backdrop {
+            width: 50%;
+            background: $background-dark;
+            padding: 2.5rem 0 2rem;
+            height: 100%;
+            box-sizing: border-box;
+
+            .title {
+                font-weight: 600;
+                font-size: 2rem;
+                white-space: nowrap;
+            }
+
+            .overview {
+                font-weight: 600;
+                font-size: 1.5rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 7;
+                -webkit-box-orient: vertical;
+                max-height: 10.9rem;
+            }
+
+            .genres {
+                display: flex;
+                gap: 1rem;
+                color: rgba($foreground-light, 0.7);
+                font-weight: 600;
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}

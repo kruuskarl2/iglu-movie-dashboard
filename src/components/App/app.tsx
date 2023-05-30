@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import Header from '../Header'
-import MovieList from '../MovieList'
-import './app.scss'
+import Header from '../Header';
+import MovieList from '../MovieList';
+import './app.scss';
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
             <MovieList />
             <footer className={'footer'} />
         </div>
-    )
+    );
 }
 
-export default App
+export default App;

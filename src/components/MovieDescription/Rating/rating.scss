@@ -1,0 +1,13 @@
+.rating {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin: 1rem 0;
+    width: 7.5rem;
+
+    .filled-stars {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+}

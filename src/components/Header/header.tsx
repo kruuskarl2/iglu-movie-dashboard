@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import SearchBar from '../SearchBar'
-import Categories from '../Categories'
-import './header.scss'
+import SearchBar from '../SearchBar';
+import Categories from '../Categories';
+import './header.scss';
 
 function Header() {
     return (
@@ -13,7 +13,7 @@ function Header() {
             </div>
             <Categories />
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
