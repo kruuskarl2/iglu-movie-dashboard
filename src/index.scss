@@ -1,11 +1,21 @@
+@import "src/variables";
+
 body {
   margin: 0;
   font-family: sourceSansPro, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: $background-dark;
+  color: $foreground-light;
 }
 
 @font-face {
   font-family: sourceSansPro;
   src: url(../public/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: sourceSansPro;
+  src: url(../public/SourceSansPro-SemiBold.ttf);
+  font-weight: 600;
 }

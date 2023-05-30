@@ -1,0 +1,56 @@
+@import "src/variables";
+
+.categories {
+    display: flex;
+    gap: 1rem;
+
+    .category-container {
+        overflow: hidden;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .category {
+        font-size: 1rem;
+        color: rgba($foreground-light, 0.5);
+        transition: color 0.15s;
+        cursor: pointer;
+        white-space: nowrap;
+        position: relative;
+
+        &:hover {
+            color: rgba($foreground-light, 0.8);
+        }
+
+        &__active {
+            font-weight: 600;
+            color: $foreground-light;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        &__more {
+            padding-right: 4rem;
+            cursor: pointer;
+            color: rgba($foreground-light, 0.5);
+            transition: color 0.15s;
+
+            &:hover {
+                color: rgba($foreground-light, 0.8);
+
+                .dropdown {
+                    position: absolute;
+                    background: $background-light;
+                    padding: 3rem 2rem 2rem 1rem;
+                    display:flex;
+                    flex-direction: column;
+                    gap: 0.7rem;
+                }
+            }
+
+            .dropdown {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import "src/variables";
+
+.header {
+    height: 10.25rem;
+    background: $background-light;
+    padding: 2.5rem 2rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+
+        .movies-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 0;
+            white-space: nowrap;
+        }
+    }
+}
