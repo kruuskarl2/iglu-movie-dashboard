@@ -1,0 +1,30 @@
+@import "src/variables";
+
+.movie-list {
+    margin: 2rem;
+
+    .movie-list-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9.438rem, 1fr));
+        gap: 1.5rem;
+        max-width: 1440px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+
+        .movie-card {
+            border: 1px solid rgba($foreground-light, 0.5);
+            cursor: pointer;
+            transition: transform 0.15s;
+            max-width: 9.438rem;
+    
+            &:hover {
+                transform: scale(1.03);
+            }
+            
+            .poster {
+                max-width: 9.438rem;
+            }
+        }
+    }
+}
