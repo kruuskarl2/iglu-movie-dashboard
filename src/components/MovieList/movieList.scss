@@ -32,6 +32,7 @@
             height: 14.156rem;
             opacity: 0;
             animation: fadeIn 0.3s forwards;
+            transition: margin-bottom 0.3s;
 
             &.selected {
                 margin-bottom: 27rem;
