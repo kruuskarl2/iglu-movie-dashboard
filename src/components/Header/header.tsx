@@ -10,15 +10,13 @@ interface Props {
 }
 
 function Header(props: Props) {
-    const { setIsLoading, setMovies } = props;
-
     return (
         <header className="header">
             <div className="search">
                 <h1 className={'movies-title'}>Popular movies</h1>
-                <SearchBar setIsLoading={setIsLoading} setMovies={setMovies} />
+                <SearchBar {...props} />
             </div>
-            <Categories />
+            <Categories {...props} />
         </header>
     );
 }

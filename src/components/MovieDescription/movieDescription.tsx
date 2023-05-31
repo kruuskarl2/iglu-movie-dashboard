@@ -62,7 +62,7 @@ function MovieDescription({ movieId }: { movieId: number }) {
     });
 
     const fiveStarRating = rating / 2;
-    const backdropUrl = 'http://image.tmdb.org/t/p/w500/' + backdropPath;
+    const backdropUrl = 'http://image.tmdb.org/t/p/w1280/' + backdropPath;
 
     return (
         <div className="movie-description">
