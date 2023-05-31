@@ -18,6 +18,7 @@ interface Props {
 function Categories(props: Props) {
     const [genres, setGenres] = useState([]);
     const [moreGenres, setMoreGenres] = useState([]);
+
     const { setIsLoading, setMovies, selectedGenre, setSelectedGenre } = props;
 
     useEffect(() => {
@@ -58,7 +59,7 @@ function Categories(props: Props) {
                     setIsLoading(false);
                 });
         },
-        [setIsLoading, setMovies]
+        [setIsLoading, setMovies, setSelectedGenre]
     );
 
     if (!genres.length || !moreGenres.length) {
