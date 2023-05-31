@@ -10,6 +10,7 @@
     padding: 0 2rem;
     box-sizing: border-box;
     width: 100%;
+    text-align: center;
 
     .container {
         max-width: 1440px;
@@ -20,6 +21,12 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position-x: 100%;
+        text-align: left;
+
+        @media (max-width: 800px) {
+            // Overrides inline styles
+            background: none !important;
+        }
 
         &::before {
             content: ' ';
@@ -29,6 +36,10 @@
             width: 30%;
             height: 100%;
             position: absolute;
+
+            @media (max-width: 800px) {
+                background: none;
+            }
         }
 
         .text-backdrop {
@@ -37,6 +48,10 @@
             padding: 2.5rem 0 2rem;
             height: 100%;
             box-sizing: border-box;
+
+            @media (max-width: 800px) {
+                width: 100%;
+            }
 
             .title {
                 font-weight: 600;
@@ -52,7 +67,7 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 7;
                 -webkit-box-orient: vertical;
-                max-height: 10.9rem;
+                max-height: 10rem;
             }
 
             .genres {

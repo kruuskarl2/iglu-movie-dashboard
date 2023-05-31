@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import './movieList.scss';
 import MovieDescription from '../MovieDescription';
-import data from './dummyData';
 
 interface Movie {
     poster_path: string;
