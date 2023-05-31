@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SearchBar from '../SearchBar';
 import Categories from '../Categories';
@@ -10,13 +10,19 @@ interface Props {
 }
 
 function Header(props: Props) {
+    const [selectedGenre, setSelectedGenre] = useState(-1);
+
     return (
         <header className="header">
             <div className="search">
                 <h1 className={'movies-title'}>Popular movies</h1>
-                <SearchBar {...props} />
+                <SearchBar {...props} setSelectedGenre={setSelectedGenre} />
             </div>
-            <Categories {...props} />
+            <Categories
+                {...props}
+                selectedGenre={selectedGenre}
+                setSelectedGenre={setSelectedGenre}
+            />
         </header>
     );
 }

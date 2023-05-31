@@ -11,14 +11,14 @@ interface Genre {
 interface Props {
     setIsLoading: Function;
     setMovies: Function;
+    setSelectedGenre: Function;
+    selectedGenre: number;
 }
 
 function Categories(props: Props) {
     const [genres, setGenres] = useState([]);
     const [moreGenres, setMoreGenres] = useState([]);
-    const [selectedGenre, setSelectedGenre] = useState(-1);
-
-    const { setIsLoading, setMovies } = props;
+    const { setIsLoading, setMovies, selectedGenre, setSelectedGenre } = props;
 
     useEffect(() => {
         fetch(

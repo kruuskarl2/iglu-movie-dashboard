@@ -7,10 +7,11 @@ import options from '../../helpers/apiOptions';
 interface Props {
     setIsLoading: Function;
     setMovies: Function;
+    setSelectedGenre: Function;
 }
 
 function SearchBar(props: Props) {
-    const { setIsLoading, setMovies } = props;
+    const { setIsLoading, setMovies, setSelectedGenre } = props;
 
     const searchForMovies = useCallback(
         (event: any) => {
@@ -21,6 +22,7 @@ function SearchBar(props: Props) {
 
             if (!searchQuery) return;
 
+            setSelectedGenre(-1);
             setIsLoading(true);
 
             fetch(
@@ -37,7 +39,7 @@ function SearchBar(props: Props) {
                     setIsLoading(false);
                 });
         },
-        [setIsLoading, setMovies]
+        [setIsLoading, setMovies, setSelectedGenre]
     );
 
     return (
