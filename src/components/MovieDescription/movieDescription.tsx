@@ -33,11 +33,7 @@ function MovieDescription({ movieId }: { movieId: number }) {
     }
 
     if (!movieDetails) {
-        return (
-            <div className="movie-description">
-                Could not load movie details.
-            </div>
-        );
+        return <div className="movie-description" />;
     }
 
     const {

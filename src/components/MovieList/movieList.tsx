@@ -24,13 +24,18 @@ function MovieList({ movies }: { movies: Movie[] }) {
             </>
         ) : null;
 
+        const selectMovie = (id: number) => {
+            if (id === selectedMovieId) setSelectedMovieId(-1);
+            else setSelectedMovieId(id);
+        };
+
         const animationDelay = index * 0.01;
 
         return (
             <div
                 className={`movie-card ${isSelected ? 'selected' : ''}`}
                 key={id}
-                onClick={() => setSelectedMovieId(id)}
+                onClick={() => selectMovie(id)}
                 style={{ animationDelay: `${animationDelay}s` }}
             >
                 <img
