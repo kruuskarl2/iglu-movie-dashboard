@@ -1,5 +1,14 @@
 @import 'src/variables';
 
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
 .app {
     display: flex;
     flex-direction: column;
@@ -9,5 +18,19 @@
         background: $background-light;
         height: 5rem;
         margin-top: auto;
+    }
+
+    .loading {
+        margin: 10rem auto;
+        height: 5rem;
+        display: flex;
+        flex-direction: column;
+        color: rgba($foreground-light, 0.8);
+
+        img {
+            height: 3rem;
+            margin-bottom: 1rem;
+            animation: spin infinite 0.7s ease-in-out;
+        }
     }
 }

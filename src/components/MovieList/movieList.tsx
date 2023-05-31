@@ -4,11 +4,17 @@ import './movieList.scss';
 import MovieDescription from '../MovieDescription';
 import data from './dummyData';
 
-function MovieList() {
+interface Movie {
+    poster_path: string;
+    id: number;
+    title: string;
+}
+
+function MovieList({ movies }: { movies: Movie[] }) {
     const [selectedMovieId, setSelectedMovieId] = useState(-1);
 
-    const moviesJSX = data.results.map((movie) => {
-        const { poster_path: posterPath, id } = movie;
+    const moviesJSX = movies.map((movie) => {
+        const { poster_path: posterPath, id, title } = movie;
 
         const isSelected = selectedMovieId === id;
 
@@ -27,7 +33,7 @@ function MovieList() {
             >
                 <img
                     src={'http://image.tmdb.org/t/p/w500/' + posterPath}
-                    alt="poster"
+                    alt={title}
                     className={'poster'}
                 />
                 {movieDescription}
@@ -35,9 +41,15 @@ function MovieList() {
         );
     });
 
+    const moviesExist = !!movies.length;
+
     return (
         <div className="movie-list">
-            <div className="movie-list-container">{moviesJSX}</div>
+            {moviesExist ? (
+                <div className="movie-list-container">{moviesJSX}</div>
+            ) : (
+                <div className={'error'}>Nothing to show :/</div>
+            )}
         </div>
     );
 }

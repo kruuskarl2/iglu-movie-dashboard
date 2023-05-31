@@ -14,7 +14,7 @@
 
         .movie-card {
             cursor: pointer;
-            max-width: 9.438rem;
+            width: 9.438rem;
             height: 14.156rem;
 
             &.selected {
@@ -43,14 +43,22 @@
             }
 
             .poster {
-                max-width: 9.438rem;
                 transition: transform 0.15s;
                 border: 1px solid rgba($foreground-light, 0.5);
+                min-width: 9.438rem;
+                max-width: 9.438rem;
+                min-height: 14.156rem;
 
                 &:hover {
                     transform: scale(1.05);
                 }
             }
         }
+    }
+
+    .error {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 5rem;
     }
 }
