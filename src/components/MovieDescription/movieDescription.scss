@@ -12,6 +12,10 @@
     width: 100%;
     text-align: center;
 
+    @media (max-width: $mobile-breakpoint) {
+        padding: 0 1rem;
+    }
+
     .container {
         max-width: 1440px;
         margin-right: auto;
@@ -23,7 +27,7 @@
         background-position-x: 100%;
         text-align: left;
 
-        @media (max-width: 800px) {
+        @media (max-width: $mobile-breakpoint) {
             // Overrides inline styles
             background: none !important;
         }
@@ -37,7 +41,7 @@
             height: 100%;
             position: absolute;
 
-            @media (max-width: 800px) {
+            @media (max-width: $mobile-breakpoint) {
                 background: none;
             }
         }
@@ -50,7 +54,7 @@
             box-sizing: border-box;
             overflow: hidden;
 
-            @media (max-width: 800px) {
+            @media (max-width: $mobile-breakpoint) {
                 width: 100%;
             }
 

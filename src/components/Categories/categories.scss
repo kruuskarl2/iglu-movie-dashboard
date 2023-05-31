@@ -34,7 +34,6 @@
         }
 
         &.more {
-            padding-right: 4rem;
             color: rgba($foreground-light, 0.5);
             transition: color 0.15s;
 
@@ -49,6 +48,10 @@
                     flex-direction: column;
                     gap: 0.7rem;
                     z-index: 15;
+
+                    @media (max-width: $mobile-breakpoint) {
+                        right: 0;
+                    }
                 }
             }
 

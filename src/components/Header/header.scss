@@ -18,6 +18,10 @@
             font-weight: 400;
             margin: 0;
             white-space: nowrap;
+
+            @media (max-width: $mobile-breakpoint) {
+                display: none;
+            }
         }
     }
 }

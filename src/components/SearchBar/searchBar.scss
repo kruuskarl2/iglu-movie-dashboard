@@ -11,6 +11,11 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: $mobile-breakpoint) {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
     .search-input {
         outline: none;
         background: none;

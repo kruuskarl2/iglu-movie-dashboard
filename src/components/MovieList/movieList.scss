@@ -3,6 +3,11 @@
 .movie-list {
     margin: 2rem;
 
+    @media (max-width: $mobile-breakpoint) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     .movie-list-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(9.438rem, 1fr));
