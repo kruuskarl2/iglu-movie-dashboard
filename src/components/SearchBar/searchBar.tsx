@@ -15,7 +15,11 @@ function SearchBar(props: Props) {
     const searchForMovies = useCallback(
         (event: any) => {
             event.preventDefault();
-            const searchQuery = event.target[0].value;
+            const input = event.target[0];
+            const searchQuery = input.value;
+            input.value = '';
+
+            if (!searchQuery) return;
 
             setIsLoading(true);
 
