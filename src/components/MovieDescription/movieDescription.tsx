@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import './movieDescription.scss';
 import Rating from './Rating';
+import Loading from '../Loading';
 
 function MovieDescription({ movieId }: { movieId: number }) {
     const [movieDetails, setMovieDetails] = useState<any>();
@@ -32,7 +33,11 @@ function MovieDescription({ movieId }: { movieId: number }) {
     }, [movieId]);
 
     if (isLoading) {
-        return <div className="movie-description">Loading...</div>;
+        return (
+            <div className="movie-description">
+                <Loading />
+            </div>
+        );
     }
 
     if (!movieDetails) {

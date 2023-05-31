@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Header from '../Header';
 import MovieList from '../MovieList';
-import loadingIcon from './loadingIcon.svg';
+import Loading from '../Loading';
 import './app.scss';
 
 function App() {
@@ -36,17 +36,10 @@ function App() {
             });
     }, []);
 
-    const loadingJSX = (
-        <div className={'loading'}>
-            <img src={loadingIcon} alt="loading" />
-            Loading movies...
-        </div>
-    );
-
     return (
         <div className="app">
             <Header setIsLoading={setIsLoading} setMovies={setMovies} />
-            {isLoading ? loadingJSX : <MovieList movies={movies} />}
+            {isLoading ? <Loading /> : <MovieList movies={movies} />}
             <footer className={'footer'} />
         </div>
     );
