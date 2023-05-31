@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './movieDescription.scss';
 import Rating from './Rating';
 import Loading from '../Loading';
+import options from '../../helpers/apiOptions';
 
 function MovieDescription({ movieId }: { movieId: number }) {
     const [movieDetails, setMovieDetails] = useState<any>();
@@ -10,15 +11,6 @@ function MovieDescription({ movieId }: { movieId: number }) {
 
     useEffect(() => {
         setIsLoading(true);
-
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization:
-                    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNmRlZTA2MDQyYjM0MjZjMWIxYTUyZWUzNDJiYjBjZiIsInN1YiI6IjY0NzQ5ZjczY2MyNzdjMDExNjFjZWIxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1PJTncFPCiXKvecugtzed7wIPETWBiNlGwIv4bYEoSE',
-            },
-        };
 
         fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options)
             .then((response) => response.json())

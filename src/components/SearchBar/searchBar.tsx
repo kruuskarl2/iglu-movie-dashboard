@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 
 import './searchBar.scss';
 import searchIcon from './searchIcon.svg';
+import options from '../../helpers/apiOptions';
 
 interface Props {
     setIsLoading: Function;
@@ -17,15 +18,6 @@ function SearchBar(props: Props) {
             const searchQuery = event.target[0].value;
 
             setIsLoading(true);
-
-            const options = {
-                method: 'GET',
-                headers: {
-                    accept: 'application/json',
-                    Authorization:
-                        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNmRlZTA2MDQyYjM0MjZjMWIxYTUyZWUzNDJiYjBjZiIsInN1YiI6IjY0NzQ5ZjczY2MyNzdjMDExNjFjZWIxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1PJTncFPCiXKvecugtzed7wIPETWBiNlGwIv4bYEoSE',
-                },
-            };
 
             fetch(
                 `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1`,

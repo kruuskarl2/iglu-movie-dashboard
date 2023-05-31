@@ -4,6 +4,7 @@ import Header from '../Header';
 import MovieList from '../MovieList';
 import Loading from '../Loading';
 import './app.scss';
+import options from '../../helpers/apiOptions';
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -11,15 +12,6 @@ function App() {
 
     useEffect(() => {
         setIsLoading(true);
-
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization:
-                    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNmRlZTA2MDQyYjM0MjZjMWIxYTUyZWUzNDJiYjBjZiIsInN1YiI6IjY0NzQ5ZjczY2MyNzdjMDExNjFjZWIxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1PJTncFPCiXKvecugtzed7wIPETWBiNlGwIv4bYEoSE',
-            },
-        };
 
         fetch(
             'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 import './categories.scss';
+import options from '../../helpers/apiOptions';
 
 interface Genre {
     name: string;
@@ -20,15 +21,6 @@ function Categories(props: Props) {
     const { setIsLoading, setMovies } = props;
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization:
-                    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNmRlZTA2MDQyYjM0MjZjMWIxYTUyZWUzNDJiYjBjZiIsInN1YiI6IjY0NzQ5ZjczY2MyNzdjMDExNjFjZWIxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1PJTncFPCiXKvecugtzed7wIPETWBiNlGwIv4bYEoSE',
-            },
-        };
-
         fetch(
             'https://api.themoviedb.org/3/genre/movie/list?language=en',
             options
@@ -47,15 +39,6 @@ function Categories(props: Props) {
     const selectGenre = useCallback(
         (selectedGenre: number) => {
             setIsLoading(true);
-
-            const options = {
-                method: 'GET',
-                headers: {
-                    accept: 'application/json',
-                    Authorization:
-                        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNmRlZTA2MDQyYjM0MjZjMWIxYTUyZWUzNDJiYjBjZiIsInN1YiI6IjY0NzQ5ZjczY2MyNzdjMDExNjFjZWIxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1PJTncFPCiXKvecugtzed7wIPETWBiNlGwIv4bYEoSE',
-                },
-            };
 
             const genreQueryParam =
                 selectedGenre === -1 ? '' : `&with_genres=${selectedGenre}`;
