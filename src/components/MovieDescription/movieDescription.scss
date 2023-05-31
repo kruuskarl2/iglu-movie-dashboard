@@ -85,6 +85,10 @@
                 font-weight: 600;
                 font-size: 2rem;
                 white-space: nowrap;
+
+                @media (max-width: $mobile-breakpoint) {
+                    font-size: 1.5rem;
+                }
             }
 
             .overview {
@@ -96,6 +100,10 @@
                 -webkit-line-clamp: 7;
                 -webkit-box-orient: vertical;
                 max-height: 10rem;
+
+                @media (max-width: $mobile-breakpoint) {
+                    font-size: 1rem;
+                }
             }
 
             .genres {
@@ -105,6 +113,9 @@
                 font-weight: 600;
                 font-size: 1.5rem;
                 margin-top: 1.5rem;
+                @media (max-width: $mobile-breakpoint) {
+                    font-size: 1rem;
+                }
             }
         }
     }
