@@ -3,6 +3,12 @@
 .categories {
     display: flex;
     gap: 1rem;
+    opacity: 1;
+    transition: opacity 0.2s;
+
+    &.hidden {
+        opacity: 0;
+    }
 
     .category-container {
         overflow: hidden;
@@ -22,16 +28,13 @@
             color: rgba($foreground-light, 0.8);
         }
 
-        &__active {
+        &.active {
             font-weight: 600;
             color: $foreground-light;
-            white-space: nowrap;
-            cursor: pointer;
         }
 
-        &__more {
+        &.more {
             padding-right: 4rem;
-            cursor: pointer;
             color: rgba($foreground-light, 0.5);
             transition: color 0.15s;
 
@@ -45,6 +48,7 @@
                     display: flex;
                     flex-direction: column;
                     gap: 0.7rem;
+                    z-index: 15;
                 }
             }
 
