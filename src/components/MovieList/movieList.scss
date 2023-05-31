@@ -1,5 +1,14 @@
 @import 'src/variables';
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .movie-list {
     margin: 2rem;
 
@@ -21,6 +30,8 @@
             cursor: pointer;
             width: 9.438rem;
             height: 14.156rem;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
 
             &.selected {
                 margin-bottom: 27rem;

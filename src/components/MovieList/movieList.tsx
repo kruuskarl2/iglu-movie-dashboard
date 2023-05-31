@@ -12,7 +12,7 @@ interface Movie {
 function MovieList({ movies }: { movies: Movie[] }) {
     const [selectedMovieId, setSelectedMovieId] = useState(-1);
 
-    const moviesJSX = movies.map((movie) => {
+    const moviesJSX = movies.map((movie, index) => {
         const { poster_path: posterPath, id, title } = movie;
 
         const isSelected = selectedMovieId === id;
@@ -24,11 +24,14 @@ function MovieList({ movies }: { movies: Movie[] }) {
             </>
         ) : null;
 
+        const animationDelay = index * 0.01;
+
         return (
             <div
                 className={`movie-card ${isSelected ? 'selected' : ''}`}
                 key={id}
                 onClick={() => setSelectedMovieId(id)}
+                style={{ animationDelay: `${animationDelay}s` }}
             >
                 <img
                     src={'http://image.tmdb.org/t/p/w500/' + posterPath}
